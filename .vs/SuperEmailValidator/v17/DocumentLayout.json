@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bolog\\Desktop\\SuperEmailValidator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{55533639-E1AA-4EA5-A9A9-00B29B12F094}|SuperEmailValidator.csproj|c:\\users\\bolog\\desktop\\superemailvalidator\\superemailvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55533639-E1AA-4EA5-A9A9-00B29B12F094}|SuperEmailValidator.csproj|solutionrelative:superemailvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SuperEmailValidator.cs",
+              "DocumentMoniker": "C:\\Users\\bolog\\Desktop\\SuperEmailValidator\\SuperEmailValidator.cs",
+              "RelativeDocumentMoniker": "SuperEmailValidator.cs",
+              "ToolTip": "C:\\Users\\bolog\\Desktop\\SuperEmailValidator\\SuperEmailValidator.cs",
+              "RelativeToolTip": "SuperEmailValidator.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAUwGYAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T15:02:56.822Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

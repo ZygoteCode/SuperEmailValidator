@@ -1,6 +1,9 @@
 ﻿using DnsClient;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
+using System.Net.Sockets;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace SuperEmailValidator
@@ -15,7 +18,8 @@ namespace SuperEmailValidator
             string email,
             bool validateRegex = true,
             bool validateDisposable = true,
-            bool validateDomain = true
+            bool validateDomain = true,
+            bool validateGmail = true
         )
         {
             if (validateRegex && !Regex.IsMatch(email,
@@ -56,6 +60,17 @@ namespace SuperEmailValidator
                 }
             }
 
+            if (validateGmail)
+            {
+                if (emailDomain.ToLower().Trim().Equals("gmail.com"))
+                {
+                    if (!IsGmailValid(email))
+                    {
+                        return false;
+                    }
+                }
+            }
+
             return true;
         }
 
@@ -66,7 +81,7 @@ namespace SuperEmailValidator
                 yield break;
             }
 
-            using (System.IO.StringReader reader = new System.IO.StringReader(input))
+            using (StringReader reader = new StringReader(input))
             {
                 string line;
 
@@ -75,6 +90,58 @@ namespace SuperEmailValidator
                     yield return line;
                 }
             }
+        }
+
+        private static bool IsGmailValid(string emailAddress)
+        {
+            try
+            {
+                TcpClient tClient = new TcpClient("gmail-smtp-in.l.google.com", 25);
+                string CRLF = "\r\n";
+                byte[] dataBuffer;
+                string ResponseString;
+                NetworkStream netStream = tClient.GetStream();
+                StreamReader reader = new StreamReader(netStream);
+                ResponseString = reader.ReadLine();
+
+                dataBuffer = BytesFromString("HELO Hi" + CRLF);
+                netStream.Write(dataBuffer, 0, dataBuffer.Length);
+                ResponseString = reader.ReadLine();
+                dataBuffer = BytesFromString("MAIL FROM:<expobotofficial@gmail.com>" + CRLF);
+                netStream.Write(dataBuffer, 0, dataBuffer.Length);
+                ResponseString = reader.ReadLine();
+
+                dataBuffer = BytesFromString($"RCPT TO:<{emailAddress}>" + CRLF);
+                netStream.Write(dataBuffer, 0, dataBuffer.Length);
+                ResponseString = reader.ReadLine();
+                int responseCode = GetResponseCode(ResponseString);
+
+                if (responseCode == 550)
+                {
+                    return false;
+                }
+
+                dataBuffer = BytesFromString("QUITE" + CRLF);
+                netStream.Write(dataBuffer, 0, dataBuffer.Length);
+                tClient.Close();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        private static byte[] BytesFromString(string str)
+        {
+            return Encoding.ASCII.GetBytes(str);
+        }
+
+        private static int GetResponseCode(string ResponseString)
+        {
+            return int.Parse(ResponseString.Substring(0, 3));
         }
     }
 }
