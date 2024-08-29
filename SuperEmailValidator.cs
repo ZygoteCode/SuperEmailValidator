@@ -12,6 +12,7 @@ namespace SuperEmailValidator
     {
         private static IPEndPoint _ipEndPoint = new IPEndPoint(IPAddress.Parse("8.8.8.8"), 53);
         private static LookupClient _lookupClient = new LookupClient(_ipEndPoint);
+        private static string[] _outlookDomains = new string[] { "hotmail.", "live.", "outlook.", "passport.", "windowslive.", "msn." };
 
         public static bool IsEmailValid
         (
@@ -19,7 +20,8 @@ namespace SuperEmailValidator
             bool validateRegex = true,
             bool validateDisposable = true,
             bool validateDomain = true,
-            bool validateGmail = true
+            bool validateGmail = true,
+            bool validateOutlook = true
         )
         {
             if (validateRegex && !Regex.IsMatch(email,
@@ -71,6 +73,20 @@ namespace SuperEmailValidator
                 }
             }
 
+            if (validateOutlook)
+            {
+                foreach (string outlookDomain in _outlookDomains)
+                {
+                    if (emailDomain.ToLower().Trim().StartsWith(outlookDomain))
+                    {
+                        if (!IsOutlookValid(email))
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
             return true;
         }
 
@@ -92,7 +108,7 @@ namespace SuperEmailValidator
             }
         }
 
-        private static bool IsGmailValid(string emailAddress)
+        private static bool IsSmtpEmailValid(string smtpServer, string emailAddress)
         {
             try
             {
@@ -133,6 +149,15 @@ namespace SuperEmailValidator
             }
         }
 
+        private static bool IsGmailValid(string emailAddress)
+        {
+            return IsSmtpEmailValid("gmail-smtp-in.l.google.com", emailAddress);
+        }
+
+        private static bool IsOutlookValid(string emailAddress)
+        {
+            return IsSmtpEmailValid("outlook-com.olc.protection.outlook.com", emailAddress);
+        }
 
         private static byte[] BytesFromString(string str)
         {
