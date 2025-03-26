@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\bolog\\Desktop\\SuperEmailValidator\\",
+  "WorkspaceRootPath": "C:\\Users\\ZygoteCode\\Desktop\\SuperEmailValidator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55533639-E1AA-4EA5-A9A9-00B29B12F094}|SuperEmailValidator.csproj|c:\\users\\bolog\\desktop\\superemailvalidator\\superemailvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{55533639-E1AA-4EA5-A9A9-00B29B12F094}|SuperEmailValidator.csproj|c:\\users\\ZygoteCode\\desktop\\superemailvalidator\\superemailvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55533639-E1AA-4EA5-A9A9-00B29B12F094}|SuperEmailValidator.csproj|solutionrelative:superemailvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55533639-E1AA-4EA5-A9A9-00B29B12F094}|SuperEmailValidator.csproj|c:\\users\\bolog\\desktop\\superemailvalidator\\resources\\disposable_mail_domain_list.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{55533639-E1AA-4EA5-A9A9-00B29B12F094}|SuperEmailValidator.csproj|c:\\users\\ZygoteCode\\desktop\\superemailvalidator\\resources\\disposable_mail_domain_list.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{55533639-E1AA-4EA5-A9A9-00B29B12F094}|SuperEmailValidator.csproj|solutionrelative:resources\\disposable_mail_domain_list.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -24,9 +24,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "disposable_mail_domain_list.txt",
-              "DocumentMoniker": "C:\\Users\\bolog\\Desktop\\SuperEmailValidator\\Resources\\disposable_mail_domain_list.txt",
+              "DocumentMoniker": "C:\\Users\\ZygoteCode\\Desktop\\SuperEmailValidator\\Resources\\disposable_mail_domain_list.txt",
               "RelativeDocumentMoniker": "Resources\\disposable_mail_domain_list.txt",
-              "ToolTip": "C:\\Users\\bolog\\Desktop\\SuperEmailValidator\\Resources\\disposable_mail_domain_list.txt",
+              "ToolTip": "C:\\Users\\ZygoteCode\\Desktop\\SuperEmailValidator\\Resources\\disposable_mail_domain_list.txt",
               "RelativeToolTip": "Resources\\disposable_mail_domain_list.txt",
               "ViewState": "AgIAAHybAgAAAAAAAAAAAIibAgARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
@@ -37,9 +37,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "SuperEmailValidator.cs",
-              "DocumentMoniker": "C:\\Users\\bolog\\Desktop\\SuperEmailValidator\\SuperEmailValidator.cs",
+              "DocumentMoniker": "C:\\Users\\ZygoteCode\\Desktop\\SuperEmailValidator\\SuperEmailValidator.cs",
               "RelativeDocumentMoniker": "SuperEmailValidator.cs",
-              "ToolTip": "C:\\Users\\bolog\\Desktop\\SuperEmailValidator\\SuperEmailValidator.cs",
+              "ToolTip": "C:\\Users\\ZygoteCode\\Desktop\\SuperEmailValidator\\SuperEmailValidator.cs",
               "RelativeToolTip": "SuperEmailValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
